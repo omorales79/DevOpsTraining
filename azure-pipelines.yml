@@ -72,5 +72,6 @@ stages:
                     azureSubscription: '$(ConnectedServiceName)'
                     appType: '$(WebAppKind)'
                     WebAppName: '$(WebAppName)'
-                    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+                    #packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
+                    packageForLinux: '$(build.artifactstagingdirectory)/**/*.war'
                     StartupCommand: '$(Parameters.StartupCommand)'                  
