@@ -14,7 +14,8 @@ variables:
     value: webAppLinux
 
   - name: ConnectedServiceName
-    value: a32341a1-c600-4e58-9f05-f592ee5d04bd
+    #value: a32341a1-c600-4e58-9f05-f592ee5d04bd
+    value: Azure DevOps Pipelines Testing
 
   - name: WebAppName
     value: azure-omorales-cd-pipeline
