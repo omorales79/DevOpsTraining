@@ -15,7 +15,7 @@ variables:
 
   - name: ConnectedServiceName
     #value: a32341a1-c600-4e58-9f05-f592ee5d04bd
-    value: Azure DevOps Pipelines Testing
+    value: Azure subscription 1 (8102ef54-f38a-4c4d-abff-8282aa4f08ed)
 
   - name: WebAppName
     value: azure-omorales-cd-pipeline
