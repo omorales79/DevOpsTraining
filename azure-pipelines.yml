@@ -68,9 +68,9 @@ stages:
                 - task: DownloadPipelineArtifact@2
                   displayName: 'Download Current Build Artifacts'
                   inputs:
-                   buildType: 'current'
+                   buildType: 'current'                   
                    artifactName: 'warfile' # Name of your published artifact
-                   targetPath: '$(Pipeline.Workspace)/bin' # Destination folder
+                   downloadPath: '$(System.ArtifactsDirectory)' # Destination folder
                   #- download: 'current'
                   # artifact: 'warfile'
 
