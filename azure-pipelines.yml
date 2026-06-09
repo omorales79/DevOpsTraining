@@ -14,8 +14,6 @@ variables:
     value: webAppLinux
 
   - name: ConnectedServiceName
-    #value: a32341a1-c600-4e58-9f05-f592ee5d04bd
-    #value: Azure subscription 1 (8102ef54-f38a-4c4d-abff-8282aa4f08ed)
     value: ac59adbd-9024-4f57-8cb4-2c0d37ea8cc2
 
   - name: WebAppName
@@ -73,8 +71,6 @@ stages:
                    buildType: 'current'                   
                    artifactName: 'warfile' # Name of your published artifact
                    downloadPath: '$(System.ArtifactsDirectory)' # Destination folder
-                  #- download: 'current'
-                  # artifact: 'warfile'
 
                 - task: AzureRmWebAppDeployment@4
                   displayName: 'Deploy Azure App Service'
@@ -83,6 +79,5 @@ stages:
                     azureSubscription: '$(ConnectedServiceName)'
                     appType: '$(WebAppKind)'
                     WebAppName: '$(WebAppName)'
-                    #packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.war'
                     packageForLinux: '$(build.artifactstagingdirectory)/**/*.war'
                     StartupCommand: '$(Parameters.StartupCommand)'                  
