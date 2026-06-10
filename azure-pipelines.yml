@@ -81,3 +81,20 @@ stages:
                     WebAppName: '$(WebAppName)'
                     packageForLinux: '$(build.artifactstagingdirectory)/**/*.war'
                     StartupCommand: '$(Parameters.StartupCommand)'                  
+
+ # STAGE 3: Automation Testing artifact
+  - stage: RegressionTesting
+    displayName: 'Regression Testing'
+    dependsOn: DeployQA
+    condition: succeeded()
+    
+    jobs:    
+      - job: Regression
+        
+        steps:
+        - task: Maven@4
+          displayName: 'Maven $(System.DefaultWorkingDirectory)/_Automation_MX/pom.xml'
+          inputs:
+            azureSubscription: 'Azure subscription 1 (c281076d-c237-49f9-a95f-cf5eb5514607)'
+            mavenPomFile: '$(System.DefaultWorkingDirectory)/_Automation_MX/pom.xml'
+            goals: test
