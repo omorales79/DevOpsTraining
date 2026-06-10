@@ -82,7 +82,7 @@ stages:
                     packageForLinux: '$(build.artifactstagingdirectory)/**/*.war'
                     StartupCommand: '$(Parameters.StartupCommand)'                  
 
- # STAGE 3: Automation Testing artifact
+ # STAGE 3: Automation Testing stage
   - stage: RegressionTesting
     displayName: 'Regression Testing'
     dependsOn: DeployQA
