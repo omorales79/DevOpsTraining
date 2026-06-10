@@ -95,6 +95,6 @@ stages:
         - task: Maven@4
           displayName: 'Maven $(System.DefaultWorkingDirectory)/_Automation_MX/pom.xml'
           inputs:
-            azureSubscription: 'Azure subscription 1 (c281076d-c237-49f9-a95f-cf5eb5514607)'
+            azureSubscription: 'ac59adbd-9024-4f57-8cb4-2c0d37ea8cc2'
             mavenPomFile: '$(System.DefaultWorkingDirectory)/_Automation_MX/pom.xml'
             goals: test
